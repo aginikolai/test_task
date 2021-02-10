@@ -3,7 +3,6 @@ import Input from "./Input";
 
 const FormCreator = (props) => {
   const [values, setValues] = useState({});
-  const [numOfInputs, setNumOfInputs] = useState(0);
 
   let level = props.level || 1;
   const object = props.file || {DocumentName: 'Test'};
