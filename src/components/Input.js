@@ -1,15 +1,15 @@
 import React from 'react';
 
-const Input = ({data, onChange, name, setData}) => {
-  // React.useEffect(() => {
-  //   setData(name, '')
-  // }, [])
+const Input = ({data = {description: 'Номер телефона'}, onChange, name, array, onChangeArr}) => {
+  const description = data.description;
   return (
     <>
-      <p>{data.description}</p>
+      <p>{description}</p>
       <input
-        type="text"
-        onChange={(event) => onChange(name, event)}
+        type={array ? 'number' : 'text'}
+        onChange={(event) => {
+          !array ? onChange(name, event) : onChangeArr(name, event.target.value)
+        } }
       />
     </>
   )
